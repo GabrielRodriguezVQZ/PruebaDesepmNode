@@ -4,9 +4,7 @@ API REST para gestionar clientes, bodegas, productos y ordenes de entrega de la 
 logistica **FHL**, construida con **Express + TypeScript + PostgreSQL (Sequelize)**,
 autenticacion **JWT** y documentacion interactiva con **Swagger**.
 
-> Prueba de desempeño - Modulo 5.2 Node JS
-> Coder: _<< coloca aqui tu nombre >>_
-> Clan: _<< coloca aqui tu clan >>_
+> Coder: Gabriel Rodriguez
 
 ## Tabla de contenido
 
