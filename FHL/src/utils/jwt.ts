@@ -9,7 +9,7 @@ const JWT_EXPIRES_IN = "8h";
 export interface TokenPayload {
   id: string;
   email: string;
-  role: "administrador" | "analista";
+  role: "Admin" | "analyst";
 }
 
 // Genera un JWT firmado con el payload del usuario autenticado
