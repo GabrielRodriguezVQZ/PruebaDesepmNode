@@ -18,8 +18,8 @@ interface LoginInput {
 export const registerUser = async (data: RegisterInput) => {
   const { name, email, password, role } = data;
 
-  if (!["Admin", "analyst"].includes(role)) {
-    throw { status: 400, message: "The role must be 'Admin' or 'analyst'" };
+  if (!["Admin", "Analyst"].includes(role)) {
+    throw { status: 400, message: "The role must be 'Admin' or 'Analyst'" };
   }
 
   const existing = await User.findOne({ where: { email } });
@@ -61,7 +61,7 @@ export const loginUser = async (data: LoginInput) => {
   const token = generateToken({
     id: user.id,
     email: user.email,
-    role: user.role,
+    role: user.role as "Admin" | "analyst", 
   });
 
   return {
