@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: fhl_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: fhl_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - fhl_pgdata:/var/lib/postgresql/data
+
+volumes:
+  fhl_pgdata:
