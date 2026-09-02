@@ -32,7 +32,7 @@ const router = Router();
  *       201:
  *         description: Producto creado correctamente
  */
-router.post("/", requireAuth, requireRole("administrador"), create);
+router.post("/", requireAuth, requireRole("Admin"), create);
 
 /**
  * @openapi
@@ -46,7 +46,7 @@ router.post("/", requireAuth, requireRole("administrador"), create);
  *       200:
  *         description: Lista de productos
  */
-router.get("/", requireAuth, requireRole("administrador", "analista"), list);
+router.get("/", requireAuth, requireRole("Admin", "analyst"), list);
 
 /**
  * @openapi
@@ -68,7 +68,7 @@ router.get("/", requireAuth, requireRole("administrador", "analista"), list);
  *       404:
  *         description: No existe un producto con ese codigo
  */
-router.get("/:code", requireAuth, requireRole("administrador", "analista"), getByCode);
+router.get("/:code", requireAuth, requireRole("Admin", "analyst"), getByCode);
 
 /**
  * @openapi
@@ -102,7 +102,7 @@ router.get("/:code", requireAuth, requireRole("administrador", "analista"), getB
  *       404:
  *         description: Producto no encontrado
  */
-router.put("/:id", requireAuth, requireRole("administrador"), update);
+router.put("/:id", requireAuth, requireRole("Admin"), update);
 
 /**
  * @openapi
@@ -124,7 +124,7 @@ router.put("/:id", requireAuth, requireRole("administrador"), update);
  *       404:
  *         description: Producto no encontrado
  */
-router.delete("/:id", requireAuth, requireRole("administrador"), remove);
+router.delete("/:id", requireAuth, requireRole("Admin"), remove);
 
 /**
  * @openapi
@@ -158,6 +158,6 @@ router.delete("/:id", requireAuth, requireRole("administrador"), remove);
  *       404:
  *         description: Producto o bodega no encontrados
  */
-router.post("/:id/stock", requireAuth, requireRole("administrador"), setStock);
+router.post("/:id/stock", requireAuth, requireRole("Admin"), setStock);
 
 export default router;

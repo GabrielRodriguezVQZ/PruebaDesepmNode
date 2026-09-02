@@ -28,7 +28,7 @@ const router = Router();
  *       201:
  *         description: Bodega creada correctamente
  */
-router.post("/", requireAuth, requireRole("administrador"), create);
+router.post("/", requireAuth, requireRole("Admin"), create);
 
 /**
  * @openapi
@@ -42,7 +42,7 @@ router.post("/", requireAuth, requireRole("administrador"), create);
  *       200:
  *         description: Lista de bodegas
  */
-router.get("/", requireAuth, requireRole("administrador", "analista"), list);
+router.get("/", requireAuth, requireRole("Admin", "analyst"), list);
 
 /**
  * @openapi
@@ -56,7 +56,7 @@ router.get("/", requireAuth, requireRole("administrador", "analista"), list);
  *       200:
  *         description: Lista de bodegas activas con su stock
  */
-router.get("/active", requireAuth, requireRole("administrador", "analista"), listActive);
+router.get("/active", requireAuth, requireRole("Admin", "analyst"), listActive);
 
 /**
  * @openapi
@@ -88,7 +88,7 @@ router.get("/active", requireAuth, requireRole("administrador", "analista"), lis
  *       404:
  *         description: Bodega no encontrada
  */
-router.put("/:id", requireAuth, requireRole("administrador"), update);
+router.put("/:id", requireAuth, requireRole("Admin"), update);
 
 /**
  * @openapi
@@ -110,6 +110,6 @@ router.put("/:id", requireAuth, requireRole("administrador"), update);
  *       404:
  *         description: La bodega indicada no existe
  */
-router.patch("/:id/toggle", requireAuth, requireRole("administrador"), toggleStatus);
+router.patch("/:id/toggle", requireAuth, requireRole("Admin"), toggleStatus);
 
 export default router;
